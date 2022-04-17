@@ -6,6 +6,7 @@ A simple calendar app for scheduling work day - with JavaScript functionalities 
 
 Deployed Link
 -
+https://hkagei.github.io/workday-scheduler/
 
 Screenshot
 -
