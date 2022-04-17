@@ -9,4 +9,4 @@ Deployed Link
 https://hkagei.github.io/workday-scheduler/
 
 Screenshot
-![Imgur](https://imgur.com/u8irGCg)
+![Imgur](https://i.imgur.com/u8irGCg.png)
