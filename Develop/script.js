@@ -5,66 +5,60 @@ var hour = moment().hours();
 var saveBtn = $(".saveBtn");
 var currentHour 
 
-var taskStatus = function () {
-    currentdate;
-    console.log();
-}
-
-saveBtn.on('click', function () {
-    var timeOfDay = $(this).siblings('.hour').text();
-    var task = $(this).siblings('.description').val();
-    localStorage.setItem(timeOfDay, task);
-});
-
-var localstorage
-function loadstorage () {
-    $('.hour').each(function () {
-        var currentHour = $(this).text();
-        var currentTask = localStorage.getItem(currentHour);
-        if (currentTask !== null) {
-            $(this).siblings('.description').val(currentTask);
-        }
-    });
-}
-loadstorage();
 
 function timeBlockColor() {
     var hour = moment().hours();
 
     $(".time-block").each(function() {
-        var currHour = parseInt($(this).attr("id"));
+        var currentHour = parseInt($(this).attr("id"));
 
-        // console.log(this); //each time-block
-
-        if (currHour > hour) {
-            $(this).addClass(".future");
-        } else if (currHour === hour) {
-            $(this).addClass(".present");
+        if (currentHour > hour) {
+            $(this).addClass("future");
+        } else if (currentHour === hour) {
+            $(this).addClass("present");
         } else {
-            $(this).addClass(".past");
+            $(this).addClass("past");
         }
     })
 };
 
-// function colorChange (){
-//    if (hour >= currentDate) {
-//     var hour = $(this).attr('id');
-//     var parseHour = parseInt(hour);
-//     if (parseHour >=== currentDate) {
-//         hour.classList.add('.past');
-//     }
-// });
-//}
 
-// function colorChange() {
-//     if (hour >= currentDate)
-//     var targetDiv = document.querySelectorAll('.time-block');
-//     for (var i = 0; i < targetDiv.length; i++) {
-//         if (targetDiv[i].hour === currentDate) {
-//         targetDiv[i].style.background = 'red';
-//         }
-//     }
-// }
+saveBtn.on('click', function () {
+    var timeOfDay = $(this).siblings('.hour').text();
+    var task = $(this).siblings('.plan').val();
+    localStorage.setItem(timeOfDay, task);
+});
+
+
+function loadstorage () {
+    $('.hour').each(function () {
+        var currentHour = $(this).text();
+        var currentTask = localStorage.getItem(currentHour);
+        console.log();
+        if (currentTask !== null) {
+            $(this).siblings('.description').val(currentTask);
+        }
+    });
+}
+
+function usePlanner() {
+
+    $(".hour").each(function() {
+        var currentHour = $(this).text();
+        var currentTask = localStorage.getItem(currentHour);
+
+        if(currentTask !== null) {
+            $(this).siblings(".plan").val(currentTask);
+        }
+    });
+}
+loadstorage();
+timeBlockColor();
+usePlanner();
+
+
+
+
 
 //colorChange();
 
@@ -76,7 +70,7 @@ function timeBlockColor() {
 // WHEN I view the time blocks for that day
 // todo THEN each time block is color-coded to indicate whether it is in the past, present, or future
 // WHEN I click into a time block
-// todo THEN I can enter an event
+// ? THEN I can enter an event
 // WHEN I click the save button for that time block
 // todo THEN the text for that event is saved in local storage
 // WHEN I refresh the page
