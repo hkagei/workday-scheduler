@@ -21,6 +21,7 @@ function timeBlockColor() {
         }
     })
 };
+timeBlockColor();
 
 
 saveBtn.on('click', function () {
@@ -40,6 +41,7 @@ function loadstorage () {
         }
     });
 }
+loadstorage();
 
 function usePlanner() {
 
@@ -52,13 +54,7 @@ function usePlanner() {
         }
     });
 }
-loadstorage();
-timeBlockColor();
 usePlanner();
-
-
-
-
 
 //colorChange();
 
