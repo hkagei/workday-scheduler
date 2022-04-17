@@ -16,16 +16,16 @@ saveBtn.on('click', function () {
     localStorage.setItem(timeOfDay, task);
 });
 
-// local storage
-// function loadstorage () {
-//     $('.hour').each(function () {
-//         var currenthour = $(this).text();
-//         var currentTask = localStorage.getItem(currentHour);
-//         if (currentTask !== null) {
-//             $(this).siblings('.description').val(currenTask);
-//         }
-//     });
-// }
+var localstorage
+function loadstorage () {
+    $('.hour').each(function () {
+        var currenthour = $(this).text();
+        var currentTask = localStorage.getItem(currentHour);
+        if (currentTask !== null) {
+            $(this).siblings('.description').val(currenTask);
+        }
+    });
+}
 loadstorage();
 
 function timeBlockColor() {
