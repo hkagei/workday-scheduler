@@ -3,7 +3,7 @@ currentDate.textContent = moment().format('MMMM Do YYYY, h:mm a');
 // var hour = document.querySelector();
 var hour = moment().hours();
 var saveBtn = $(".saveBtn");
-
+var currentHour 
 
 var taskStatus = function () {
     currentdate;
@@ -19,10 +19,10 @@ saveBtn.on('click', function () {
 var localstorage
 function loadstorage () {
     $('.hour').each(function () {
-        var currenthour = $(this).text();
+        var currentHour = $(this).text();
         var currentTask = localStorage.getItem(currentHour);
         if (currentTask !== null) {
-            $(this).siblings('.description').val(currenTask);
+            $(this).siblings('.description').val(currentTask);
         }
     });
 }
